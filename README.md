@@ -9,7 +9,7 @@ The framework is divided into three distinct pillars, each conquering a unique o
 ### 1. Agronomic Yield Predictor (Continuous Linear Regression)
 * **Objective:** Predict localized Rice yields ($kg/ha$) based on micro-climate metrics and soil chemistry.
 * **Architectures Implemented:** Dual-Engine architecture comparing an algebraic **Closed-Form Ordinary Least Squares (OLS) Matrix Inversion** ($w = (X^T X)^{-1} X^T y$) against a step-by-step **Batch Gradient Descent (BGD)** solver.
-* **Mathematical Insight:** Handles extreme natural variance via a **Natural Log Transformation** ($y \rightarrow \ln(y)$), neutralizing severe biological outlier distortion (e.g., a single 120,000 kg/ha sample pulling the hyperplane out of bounds) and achieving an extraordinary optimization convergence precision delta of **$7.99 \times 10^{-15}$** (at the limits of 64-bit floating-point precision).
+* **Mathematical Insight:** Handles extreme natural variance via a **Natural Log Transformation** (y -> ln(y)), neutralizing severe biological outlier distortion (e.g., a single 120,000 kg/ha sample pulling the hyperplane out of bounds) and achieving an extraordinary optimization convergence precision delta of **$7.99 \times 10^{-15}$** (at the limits of 64-bit floating-point precision).
 
 ### 2. Phytopathology Classifier (Binary Logistic Regression)
 * **Objective:** Classify automated greenhouse leaves as "Healthy" vs "Diseased" based on pixel color intensities and surface texture contrast.
